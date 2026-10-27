@@ -64,3 +64,36 @@ uv run flet build windows
 완료되면 `build\windows` 안의 앱 폴더를 통째로 압축해 전달합니다. 받는 사람은 압축을 풀고 앱 실행 파일을 더블클릭하면 됩니다.
 
 > 현재 Windows PowerShell에는 `uv`가 설치되어 있지 않습니다. 개발 중에는 위 WSL 실행 방법을 쓰고, 배포할 때만 Windows 빌드 환경을 준비하면 됩니다.
+
+## GitHub에 백업하기
+
+이 프로젝트는 GitHub 저장소에 올려 두면 컴퓨터가 바뀌어도 안전하고, 다른 사람과 코드도 공유할 수 있습니다.
+
+### 처음 한 번: GitHub 로그인
+
+WSL 터미널에서 아래 명령을 실행합니다.
+
+```bash
+gh auth login
+```
+
+화면의 선택지는 다음처럼 고릅니다.
+
+1. `GitHub.com`
+2. `HTTPS`
+3. `Login with a web browser`
+
+브라우저가 열리면 GitHub 계정으로 로그인하고 권한을 허용합니다. **비밀번호나 개인 토큰을 코드나 채팅에 적지 않습니다.**
+
+### 변경사항 올리기
+
+로그인 후 앱 폴더에서 다음을 실행합니다.
+
+```bash
+cd "/mnt/c/vibe/Flet Calc"
+git add .
+git commit -m "feat: describe your change"
+git push
+```
+
+예를 들어 버튼 디자인을 고쳤다면 커밋 메시지는 `feat: improve care buttons`처럼, 무엇을 바꿨는지 짧게 적으면 됩니다.
