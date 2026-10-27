@@ -1,0 +1,16 @@
+[project]
+name = "classroom-care-center"
+version = "0.1.0"
+description = "Flet으로 만드는 수업 생존 관제소"
+requires-python = ">=3.11"
+dependencies = [
+    "flet>=1.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
